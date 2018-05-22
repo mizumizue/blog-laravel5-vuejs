@@ -12,15 +12,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create('ja_JP');
         $now = Time::now();
-        DB::table('users')->insert(
-            [
-                'name' => 'system',
-                'email' => 'system'.'@example.com',
+        $testUsers = [];
+        for ($i=0; $i < 10; $i++) {
+            $testUsers[] = [
+                'id' => $faker->uuid,
+                'name' => $faker->name,
+                'email' => $faker->email,
                 'password' => bcrypt('secret'),
                 'created_at' => $now,
                 'updated_at' => $now,
-            ]
-        );
+            ];
+        }
+        DB::table('users')->insert($testUsers);
     }
 }
