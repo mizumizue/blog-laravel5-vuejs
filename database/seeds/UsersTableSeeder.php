@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Cake\Chronos\Chronos;
+use Cake\I18n\Time;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $now = Chronos::now();
+        $now = Time::now();
         DB::table('users')->insert(
             [
                 'name' => 'system',
