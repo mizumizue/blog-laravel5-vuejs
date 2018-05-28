@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 通常のURLでのアクセスを拒否
+Route::get('/{any}', function () {
+    return view('app');
+})->where('any', '.*');
