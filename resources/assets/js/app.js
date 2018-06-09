@@ -7,7 +7,6 @@ Vue.use(VueRouter)
 
 Vue.component('header-component', require('./components/Layouts/Header.vue'))
 Vue.component('main-component', require('./components/Layouts/Main.vue'))
-Vue.component('sidebar-component', require('./components/Layouts/SideBar.vue'))
 Vue.component('footer-component', require('./components/Layouts/Footer.vue'))
 
 Vue.prototype.$http = window.axios
