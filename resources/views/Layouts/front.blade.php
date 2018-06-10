@@ -1,4 +1,4 @@
-@extends('common.base')
+@extends('Layouts.common.base')
 
 @section('title')
 Front
