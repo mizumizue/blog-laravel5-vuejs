@@ -15,7 +15,7 @@ class ArticleController extends ApiController
      */
     public function index()
     {
-        $articles = Article::with('tags')->get();
+        $articles = Article::with('tags')->orderBy('created_at', 'desc')->get();
         return response($articles);
     }
 
