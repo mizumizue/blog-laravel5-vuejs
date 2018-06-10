@@ -53,7 +53,7 @@ class TagsTableSeeder extends Seeder
             [
                 'id' => $faker->uuid,
                 'title' => 'MySQL',
-                'color_code' => 'FFFFFF',
+                'color_code' => '000000',
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
