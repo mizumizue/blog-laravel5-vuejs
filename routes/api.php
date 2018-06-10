@@ -17,4 +17,5 @@ use App\Article;
 
 Route::group(['middleware' => 'api'], function () {
     Route::resource('articles', 'ArticleController');
+    Route::resource('/admin/menus', 'Admin\AdminMenuController');
 });
