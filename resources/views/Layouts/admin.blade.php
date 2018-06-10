@@ -5,8 +5,9 @@ Admin
 @endsection
 
 @section('vue')
-<div id="markdownEditor">
-    <textarea id="editor" name="name" rows="8" cols="40"></textarea>
+<navbar-component></navbar-component>
+<div class="container">
+<router-view></router-view>
 </div>
 @stop
 

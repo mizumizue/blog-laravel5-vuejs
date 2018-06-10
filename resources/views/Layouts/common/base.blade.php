@@ -15,12 +15,10 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
     <body>
-        <div class="container">
-            <!-- vue -->
-            <div id="vueContent">
-                @section('vue')
-                @show
-            </div>
+        <!-- vue -->
+        <div id="vueContent">
+            @section('vue')
+            @show
         </div>
         @section('scripts')
         @show
