@@ -63,7 +63,21 @@ class TagsTableSeeder extends Seeder
                 'color_code' => '4784B4',
                 'created_at' => $now,
                 'updated_at' => $now,
-            ]
+            ],
+            [
+                'id' => $faker->uuid,
+                'title' => 'Vue.js',
+                'color_code' => '62B587',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'id' => $faker->uuid,
+                'title' => 'JavaScript',
+                'color_code' => 'F1DB6B',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
         ];
         DB::table('tags')->insert($tags);
     }

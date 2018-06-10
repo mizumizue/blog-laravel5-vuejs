@@ -3,8 +3,8 @@
 use Illuminate\Database\Seeder;
 use Cake\I18n\Time;
 
-use App\Article;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Tag;
 
 class ArticleTagTableSeeder extends Seeder
 {
@@ -19,11 +19,13 @@ class ArticleTagTableSeeder extends Seeder
         $now = Time::now();
         $tagIds = Tag::pluck('id')->toArray();
         $tagCount = count($tagIds);
+        [$min, $max] = [1, 4];
+        $max = ($max > $tagCount) ? $tagCount : $max;
         $articles = Article::all();
         $articleTag = [];
         foreach ($articles as $article) {
             // ランダムにタグ抽出して、複数登録
-            $randNum = mt_rand(1, $tagCount);
+            $randNum = mt_rand($min, $max);
             $extractedTagkeys = array_rand($tagIds, $randNum);
             if (is_integer($extractedTagkeys)) {
                 $extractedTagkeys = [$extractedTagkeys];
