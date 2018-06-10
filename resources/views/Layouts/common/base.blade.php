@@ -11,18 +11,19 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Bootstrap4 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- app.css -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
     <body>
-        <!-- vue -->
-        <div id="vueContent" class="container">
-            @section('vue')
-            @show
+        <div class="container">
+            <!-- vue -->
+            <div id="vueContent">
+                @section('vue')
+                @show
+            </div>
         </div>
-        <!-- contents -->
-        <div id="contents">
-            @section('contents')
-            @show
-        </div>
+        @section('scripts')
+        @show
         <!-- app.js -->
         <script src="{{ mix('js/app.js') }}"></script>
         <!-- Bootstrap4 -->

@@ -5,17 +5,18 @@ require('./bootstrap')
 
 Vue.use(VueRouter)
 
-Vue.component('header-component', require('./components/Layouts/Header.vue'))
-Vue.component('main-component', require('./components/Layouts/Main.vue'))
-Vue.component('footer-component', require('./components/Layouts/Footer.vue'))
+// Load Component
+Vue.component('header-component', require('./components/Layouts/Front/Header.vue'))
+Vue.component('footer-component', require('./components/Layouts/Front/Footer.vue'))
 
 Vue.prototype.$http = window.axios
 
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/', component: require('./components/Layouts/Index.vue') },
-        // { path: '/article/:id', component: require('./components/Layouts/Detail.vue') },
+        { path: '/', component: require('./components/Layouts/Front/ArticleIndex.vue') },
+        // { path: '/article/:id', component: require('./components/Layouts/Front/ArticleDetail.vue') },
+        // { path: '/admin', component: require('./components/Layouts/Admin/Index.vue') },
     ]
 })
 

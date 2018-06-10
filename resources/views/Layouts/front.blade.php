@@ -9,7 +9,6 @@ Front
     <header-component></header-component>
 </div>
 <div id="contents" class="row">
-    <main-component></main-component>
     <router-view></router-view>
 </div>
 <div id="footer" class="row">
@@ -17,5 +16,5 @@ Front
 </div>
 @stop
 
-@section('contents')
+@section('scripts')
 @stop

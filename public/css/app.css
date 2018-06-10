@@ -10417,3 +10417,53 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+body {
+  color: #4D4D4D;
+  font-family: "Noto Sans Japanese";
+}
+
+a {
+  color: #4D4D4D;
+}
+
+a:hover {
+  color: #4D4D4D;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+hr {
+  height: 5px;
+  border: none;
+  border-top: 1px #47a89c solid;
+  border-bottom: 1px #47a89c solid;
+}
+
+.explain {
+  overflow: hidden;
+}
+
+.explain p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.tag {
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 5px 4px 5px;
+  width: 100%;
+}
+
+a.tag:hover {
+  color: #FFFFFF;
+}
+
+.tag-label,
+.publish-date {
+  color: #47a89c;
+}
+
