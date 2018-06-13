@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTagTable extends Migration
+class CreateArticleDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateArticleTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_tag', function (Blueprint $table) {
+        Schema::create('article_documents', function (Blueprint $table) {
             $table->uuid('id');
-            $table->uuid('article_id')->nullable(true);
-            $table->uuid('tag_id')->nullable(true);
+            $table->uuid('article_id')->unique();
+            $table->string('path', 256)->nullable(true);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
             $table->primary('id');
@@ -33,6 +33,6 @@ class CreateArticleTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article_tag');
+        Schema::dropIfExists('article_documents');
     }
 }

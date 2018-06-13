@@ -16,7 +16,9 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('title', 20);
-            $table->string('color_code', 6);
+            $table->string('font_color_code', 6);
+            $table->string('background_color_code', 6);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
             $table->primary('id');
             $table->charset = 'utf8mb4';

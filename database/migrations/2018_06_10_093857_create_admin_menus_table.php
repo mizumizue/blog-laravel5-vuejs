@@ -16,9 +16,10 @@ class CreateAdminMenusTable extends Migration
         Schema::create('admin_menus', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('title')->nullable(false);
-            $table->string('code')->nullable(false);
+            $table->string('code')->unique();
             $table->integer('order')->nullable(true);
-            $table->boolean('visible')->nullable(false);
+            $table->boolean('visible')->default(false);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
             $table->primary('id');
             $table->charset = 'utf8mb4';
