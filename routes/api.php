@@ -1,9 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
-use App\Article;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,7 +11,9 @@ use App\Article;
 |
 */
 
+use App\Models\Article;
+use Illuminate\Http\Request;
+
 Route::group(['middleware' => 'api'], function () {
-    Route::resource('articles', 'ArticleController');
-    Route::resource('/admin/menus', 'Admin\AdminMenuController');
+    Route::get('articles', 'ArticleController@index');
 });

@@ -11,16 +11,29 @@
 |
 */
 
+use App\Models\NaviMenu;
+use App\Models\SiteSetting;
+
 // Front TODO通常のURLでのアクセスを拒否
 Route::get('/', function () {
 // Route::get('/{any}', function () {
-    return view('Layouts.front');
+    $siteSetting = SiteSetting::firstOrFail();
+    return view('Layouts.Front.app', [
+        'siteSetting' => $siteSetting,
+    ]);
 });
 // })->where('any', '.*');
 
 // Admin
 Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
     Route::get('/', function () {
-        return view('Layouts.admin');
+        $naviMenus = NaviMenu::orderBy('order', 'asc')->get();
+        $siteSetting = SiteSetting::firstOrFail();
+        return view('Layouts.Admin.app', [
+            'naviMenus' => $naviMenus,
+            'siteSetting' => $siteSetting,
+        ]);
     });
+
+    Route::resource('article', 'ArticleController');
 });
