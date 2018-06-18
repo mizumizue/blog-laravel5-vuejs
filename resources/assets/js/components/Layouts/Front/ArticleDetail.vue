@@ -1,5 +1,5 @@
 <template>
-<div id="VueIndex" class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
+<div id="VueDetail" class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
     <article class="mb-4" v-for="(article, key, index) in articles" :key="index">
         <header>
             <h2><router-link :to="'/articles/' + article.id">{{ article.title }}</router-link></h2>
