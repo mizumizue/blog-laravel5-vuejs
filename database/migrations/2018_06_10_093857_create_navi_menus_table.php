@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminMenusTable extends Migration
+class CreateNaviMenusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdminMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_menus', function (Blueprint $table) {
+        Schema::create('navi_menus', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('title')->nullable(false);
             $table->string('code')->unique();
@@ -35,6 +35,6 @@ class CreateAdminMenusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_menus');
+        Schema::dropIfExists('navi_menus');
     }
 }

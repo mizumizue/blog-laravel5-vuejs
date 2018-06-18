@@ -40,7 +40,7 @@ class ArticlesTableSeeder extends Seeder
             $articles[] = [
                 'id' => $faker->uuid,
                 'title' => ArticlesTableSeeder::$articleTitles[$i],
-                'content' => $faker->realText,
+                'description' => ArticlesTableSeeder::$articleTitles[$i],
                 'created_at' => $time,
                 'updated_at' => $time,
             ];

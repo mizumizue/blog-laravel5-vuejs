@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdminMenu extends MyModel
+class SiteSetting extends MyModel
 {
     //
 }

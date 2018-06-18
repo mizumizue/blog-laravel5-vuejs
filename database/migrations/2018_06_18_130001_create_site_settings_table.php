@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration
+class CreateSiteSettingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('site_settings', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('title')->nullable(false);
+            $table->string('url')->nullable(true);
+            $table->string('title')->nullable(true);
             $table->string('description')->nullable(true);
-            $table->boolean('published')->default(false);
+            $table->string('domain')->nullable(true);
+            $table->string('author')->nullable(true);
+            $table->string('email')->nullable(true);
+            $table->uuid('image')->nullable(true);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
             $table->primary('id');
@@ -34,6 +38,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('site_settings');
     }
 }

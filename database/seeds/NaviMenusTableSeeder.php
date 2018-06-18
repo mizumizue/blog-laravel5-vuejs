@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Cake\I18n\Time;
 
-class AdminMenusTableSeeder extends Seeder
+class NaviMenusTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class AdminMenusTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create('ja_JP');
         $now = Time::now();
-        $menus = [
+        $naviMenus = [
             [
                 'id' => $faker->uuid,
                 'title' => 'Home',
@@ -61,6 +61,6 @@ class AdminMenusTableSeeder extends Seeder
                 'updated_at' => $now,
             ],
         ];
-        DB::table('admin_menus')->insert($menus);
+        DB::table('navi_menus')->insert($naviMenus);
     }
 }
