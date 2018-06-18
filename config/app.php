@@ -78,7 +78,9 @@ return [
     |
     */
 
-    'locale' => 'en',
+    //  change language en to ja
+    // 'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +93,9 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    //  change language en to ja
+    // 'fallback_locale' => 'en',
+    'fallback_locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
