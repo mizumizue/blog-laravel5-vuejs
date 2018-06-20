@@ -2,28 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Article;
-use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
-class ArticleController extends ApiController
+class NaviMenuController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $articles = null;
-        $tagName = $request->tag ?? null;
-        if ($tagName) {
-            $tag = Tag::with('articles')->where('title', $tagName)->firstOrFail();
-            $articles = $tag->articles()->with('tags')->orderBy('created_at', 'desc')->get();
-        }
-        $articles = $articles ?? Article::with('tags')->orderBy('created_at', 'desc')->get();
-        return response($articles);
+        //
     }
 
     /**
@@ -50,13 +41,12 @@ class ArticleController extends ApiController
     /**
      * Display the specified resource.
      *
-     * @param  string  $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $article = Article::with('tags')->where('id', '=', $id)->firstOrFail();
-        return response($article);
+        //
     }
 
     /**

@@ -1,8 +1,8 @@
 <template>
-<div id="VueIndex" class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
+<div id="FrontArticleIndex" class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
     <article class="mb-4" v-for="(article, key, index) in articles" :key="index">
         <header>
-            <h2><router-link :to="'/articles/' + article.id">{{ article.title }}</router-link></h2>
+            <h2><router-link :to="'/article/' + article.id">{{ article.title }}</router-link></h2>
         </header>
         <section class="explain">
             <p class="mb-1">{{ article.content }}</p>
@@ -15,7 +15,7 @@
                     :key="index">
                     <router-link
                         class="tag"
-                        :to="'/articles?tag=' + tag.title"
+                        :to="'/tag/' + tag.title"
                         :style="
                             'background-color: #' + tag.background_color_code + ';'
                             + 'font-color: #' + tag.font_color_code + ';'
@@ -45,12 +45,30 @@ export default {
             articles: []
         }
     },
+    watch: { 
+        '$route' (to, from) {
+            this.fetchArticles()
+        }
+    },
     methods: {
-        fetchArticles() {
-            this.$http.get('/api/articles')
+        fetchArticlesDefault() {
+            this.$http.get('/api/article')
             .then(res =>  {
-                this.articles = res.data
+                this.articles = res.data;
             })
+        },
+        fetchArticlesByTag() {
+            this.$http.get('/api/article?tag=' + this.$route.params.tagname)
+            .then(res =>  {
+                this.articles = res.data;
+            })
+        },
+        fetchArticles() {
+            if (this.$route.params.tagname) {
+                this.fetchArticlesByTag()
+            } else {
+                this.fetchArticlesDefault()
+            }
         }
     }
 }

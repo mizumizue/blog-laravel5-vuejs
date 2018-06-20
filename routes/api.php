@@ -11,9 +11,9 @@
 |
 */
 
-use App\Models\Article;
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'api'], function () {
-    Route::get('articles', 'ArticleController@index');
+    Route::resource('article', 'ArticleController');
+    Route::resource('site_setting', 'SiteSettingController');
 });

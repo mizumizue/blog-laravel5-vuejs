@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ArticleController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::with('tags')->orderBy('created_at', 'desc')->get();
-        return view('Layouts.Admin.Article.index', ['articles' => $articles]);
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $article = new Article();
-        return view('Layouts.Admin.Article.detail', ['article' => $article]);
+        //
     }
 
     /**
