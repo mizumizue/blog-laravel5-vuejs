@@ -17,24 +17,19 @@ class ArticleTagTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create('ja_JP');
         $now = Time::now();
-        $tagIds = Tag::pluck('id')->toArray();
-        $tagCount = count($tagIds);
-        [$min, $max] = [1, 4];
-        $max = ($max > $tagCount) ? $tagCount : $max;
+        $tags = Tag::all();
         $articles = Article::all();
         $articleTag = [];
         foreach ($articles as $article) {
-            // ランダムにタグ抽出して、複数登録
-            $randNum = mt_rand($min, $max);
-            $extractedTagkeys = array_rand($tagIds, $randNum);
-            if (is_integer($extractedTagkeys)) {
-                $extractedTagkeys = [$extractedTagkeys];
-            }
-            foreach ($extractedTagkeys as $key) {
+            foreach ($tags as $tag) {
+                // Titleにタグ名が含まれていたら関連付けする.
+                if (mb_stripos($article->title, $tag->title) === false) {
+                    continue;
+                }
                 $articleTag[] = [
                     'id' => $faker->uuid,
                     'article_id' => $article->id,
-                    'tag_id' => $tagIds[$key],
+                    'tag_id' => $tag->id,
                     'created_at' => $now,
                     'updated_at' => $now,
                 ];

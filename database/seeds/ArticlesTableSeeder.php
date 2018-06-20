@@ -19,7 +19,7 @@ class ArticlesTableSeeder extends Seeder
         'MySQL5.7初期パスワード変更',
         'PHPからJavaScriptへのデータ受け渡し方法',
         'CakePHPでCSSが反映されない時の対処法',
-        'Larave5.6ルーティング',
+        'Laravel5.6ルーティング',
         'Vue.jsルーティング',
     ];
 
