@@ -1902,7 +1902,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(178)("./" + name);
+                __webpack_require__(179)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -18519,9 +18519,9 @@ module.exports = Cancel;
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(177)
+var __vue_script__ = __webpack_require__(178)
 /* template */
-var __vue_template__ = __webpack_require__(179)
+var __vue_template__ = __webpack_require__(180)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30409,7 +30409,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(139);
-module.exports = __webpack_require__(190);
+module.exports = __webpack_require__(195);
 
 
 /***/ }),
@@ -30431,7 +30431,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 // ReadComponents
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('FrontHeaderComponent', __webpack_require__(166));
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('AdminNaviMenuComponent', __webpack_require__(169));
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('CommonFooterComponent', __webpack_require__(171));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('CommonFooterComponent', __webpack_require__(172));
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$http = window.axios;
 
@@ -30439,29 +30439,29 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     mode: 'history',
     routes: [{
         path: '/',
-        component: __webpack_require__(174),
+        component: __webpack_require__(175),
         children: [{
             path: '/',
             component: __webpack_require__(14)
         }, {
             path: 'article/:id',
-            component: __webpack_require__(180)
+            component: __webpack_require__(181)
         }, {
             path: 'tag/:tagname',
             component: __webpack_require__(14)
         }]
     }, {
         path: '/admin',
-        component: __webpack_require__(195),
+        component: __webpack_require__(184),
         children: [{
             path: '/',
-            component: __webpack_require__(183)
+            component: __webpack_require__(187)
         }, {
             path: 'article',
-            component: __webpack_require__(185)
+            component: __webpack_require__(189)
         }, {
             path: 'article/:id',
-            component: __webpack_require__(187)
+            component: __webpack_require__(204)
         }]
     }]
 });
@@ -66461,9 +66461,9 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(198)
+var __vue_script__ = __webpack_require__(170)
 /* template */
-var __vue_template__ = __webpack_require__(170)
+var __vue_template__ = __webpack_require__(171)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -66503,6 +66503,47 @@ module.exports = Component.exports
 
 /***/ }),
 /* 170 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['title']
+});
+
+/***/ }),
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66577,15 +66618,15 @@ if (false) {
 }
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(172)
+var __vue_script__ = __webpack_require__(173)
 /* template */
-var __vue_template__ = __webpack_require__(173)
+var __vue_template__ = __webpack_require__(174)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -66624,7 +66665,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66645,7 +66686,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66676,15 +66717,15 @@ if (false) {
 }
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(175)
+var __vue_script__ = __webpack_require__(176)
 /* template */
-var __vue_template__ = __webpack_require__(176)
+var __vue_template__ = __webpack_require__(177)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -66723,7 +66764,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66764,7 +66805,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -66800,7 +66841,7 @@ if (false) {
 }
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66888,7 +66929,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -67153,10 +67194,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 178;
+webpackContext.id = 179;
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67252,15 +67293,15 @@ if (false) {
 }
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(181)
+var __vue_script__ = __webpack_require__(182)
 /* template */
-var __vue_template__ = __webpack_require__(182)
+var __vue_template__ = __webpack_require__(183)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -67299,7 +67340,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67371,7 +67412,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.$http.get('/api/article/' + this.$route.params.id).then(function (res) {
-                console.log(res.data);
                 _this.article = res.data;
             });
         }
@@ -67379,7 +67419,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -67479,371 +67519,15 @@ if (false) {
 }
 
 /***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = null
-/* template */
-var __vue_template__ = __webpack_require__(184)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Layouts/AdminTop.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-58326eba", Component.options)
-  } else {
-    hotAPI.reload("data-v-58326eba", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container", attrs: { id: "AdminTop" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12" }, [_c("h2", [_vm._v("AdminTop")])])
-      ])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-58326eba", module.exports)
-  }
-}
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(185)
 /* template */
 var __vue_template__ = __webpack_require__(186)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Layouts/AdminArticleIndex.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-626b5f9e", Component.options)
-  } else {
-    hotAPI.reload("data-v-626b5f9e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div")
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-626b5f9e", module.exports)
-  }
-}
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(188)
-/* template */
-var __vue_template__ = __webpack_require__(189)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Layouts/AdminArticleDetail.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f958b896", Component.options)
-  } else {
-    hotAPI.reload("data-v-f958b896", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 188 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    filters: {
-        moment: function moment(date) {
-            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(date).format('YYYY-MM-DD');
-        }
-    },
-    created: function created() {
-        this.fetchArticles();
-    },
-    data: function data() {
-        return {
-            articles: []
-        };
-    },
-
-    methods: {
-        fetchArticles: function fetchArticles() {
-            var _this = this;
-
-            this.$http.get('/api/articles').then(function (res) {
-                _this.articles = res.data;
-            });
-        }
-    }
-});
-
-/***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "p-md-3 col-9 col-sm-9 col-md-9 mx-auto",
-      attrs: { id: "VueDetail" }
-    },
-    _vm._l(_vm.articles, function(article, key, index) {
-      return _c("article", { key: index, staticClass: "mb-4" }, [
-        _c("header", [
-          _c(
-            "h2",
-            [
-              _c("router-link", { attrs: { to: "/articles/" + article.id } }, [
-                _vm._v(_vm._s(article.title))
-              ])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("section", { staticClass: "explain" }, [
-          _c("p", { staticClass: "mb-1" }, [_vm._v(_vm._s(article.content))])
-        ]),
-        _vm._v(" "),
-        _c("footer", [
-          _c(
-            "ul",
-            { staticClass: "tags list-inline mb-0" },
-            [
-              _c("li", { staticClass: "list-inline-item tag-label" }, [
-                _vm._v("Related Tags:")
-              ]),
-              _vm._v(" "),
-              _vm._l(article.tags, function(tag, key, index) {
-                return _c(
-                  "li",
-                  { key: index, staticClass: "list-inline-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "tag",
-                        style:
-                          "background-color: #" +
-                          tag.background_color_code +
-                          ";" +
-                          "font-color: #" +
-                          tag.font_color_code +
-                          ";",
-                        attrs: { to: "/articles?tag=" + tag.title }
-                      },
-                      [_vm._v(_vm._s(tag.title))]
-                    )
-                  ],
-                  1
-                )
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c("span", { staticClass: "publish-date" }, [
-            _vm._v("Published: " + _vm._s(_vm._f("moment")(article.created_at)))
-          ])
-        ])
-      ])
-    })
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f958b896", module.exports)
-  }
-}
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(197)
-/* template */
-var __vue_template__ = __webpack_require__(196)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -67882,38 +67566,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 196 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "AdminApp" } },
-    [
-      _c("AdminNaviMenuComponent", { attrs: { title: _vm.siteSetting.title } }),
-      _vm._v(" "),
-      _c("router-view"),
-      _vm._v(" "),
-      _c("CommonFooterComponent", { attrs: { domain: _vm.siteSetting.domain } })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2ef58922", module.exports)
-  }
-}
-
-/***/ }),
-/* 197 */
+/* 185 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67951,7 +67604,419 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 198 */
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "AdminApp" } },
+    [
+      _c("AdminNaviMenuComponent", { attrs: { title: _vm.siteSetting.title } }),
+      _vm._v(" "),
+      _c("router-view"),
+      _vm._v(" "),
+      _c("CommonFooterComponent", { attrs: { domain: _vm.siteSetting.domain } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2ef58922", module.exports)
+  }
+}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(188)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Layouts/AdminTop.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-58326eba", Component.options)
+  } else {
+    hotAPI.reload("data-v-58326eba", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container", attrs: { id: "AdminTop" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [_c("h2", [_vm._v("AdminTop")])])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-58326eba", module.exports)
+  }
+}
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(190)
+/* template */
+var __vue_template__ = __webpack_require__(191)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Layouts/AdminArticleIndex.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-626b5f9e", Component.options)
+  } else {
+    hotAPI.reload("data-v-626b5f9e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 190 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    filters: {
+        moment: function moment(date) {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(date).format('YYYY/MM/DD H:mm');
+        },
+        published: function published(_published) {
+            return _published ? '公開' : '非公開';
+        }
+    },
+    created: function created() {
+        this.fetchArticles();
+    },
+    data: function data() {
+        return {
+            articles: []
+        };
+    },
+
+    watch: {
+        '$route': function $route(to, from) {
+            this.fetchArticles();
+        }
+    },
+    methods: {
+        fetchArticles: function fetchArticles() {
+            var _this = this;
+
+            this.$http.get('/api/article').then(function (res) {
+                _this.articles = res.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container", attrs: { id: "AdminArticleIndex" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row col-12 col-sm-12 col-md-12 md-3 p-0" },
+        [
+          _c(
+            "router-link",
+            {
+              staticClass: "btn btn-default",
+              attrs: { to: "/admin/article/create" }
+            },
+            [_vm._v("新規作成")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row table-responsive" }, [
+        _c("table", { staticClass: "table table-hover" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.articles, function(article, key, index) {
+              return _c("tr", { key: index }, [
+                _c("td", [_vm._v(_vm._s(article.title))]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("published")(article.published)))
+                ]),
+                _vm._v(" "),
+                _c("td", [
+                  _vm._v(_vm._s(_vm._f("moment")(article.updated_at)))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/admin/article/" + article.id } },
+                      [_vm._v("編集")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", [_vm._v(" / ")]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      { attrs: { to: "/admin/article/destroy/" + article.id } },
+                      [_vm._v("削除")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            })
+          )
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row col-12 col-sm-12 col-md-12 mt-3 mb-3" },
+      [_c("header", [_c("h2", [_vm._v("Article Index")])])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "thead-dark" }, [
+      _c("tr", [
+        _c("th", [_vm._v("タイトル")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("公開")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("更新日時")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("操作")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-626b5f9e", module.exports)
+  }
+}
+
+/***/ }),
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(205)
+/* template */
+var __vue_template__ = __webpack_require__(206)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Layouts/AdminArticleEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b3915024", Component.options)
+  } else {
+    hotAPI.reload("data-v-b3915024", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 205 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67986,10 +68051,139 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['title']
+    created: function created() {
+        this.fetchArticle();
+    },
+    data: function data() {
+        return {
+            article: []
+        };
+    },
+
+    methods: {
+        fetchArticle: function fetchArticle() {
+            var _this = this;
+
+            this.$http.get('/api/article/' + this.$route.params.id).then(function (res) {
+                _this.article = res.data;
+            });
+        }
+    }
 });
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "container", attrs: { id: "AdminArticleEdit" } },
+      [
+        _c("div", { staticClass: "row col-12 col-sm-12 col-md-12 mt-3 mb-4" }, [
+          _c("header", [_c("h2", [_vm._v("Article Edit")])])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row mb-3" }, [
+          _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+            _vm._v("公開")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+            _c("select", { attrs: { name: "published" } }, [
+              _c("option", { attrs: { value: "0" } }, [_vm._v("非公開")]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "1" } }, [_vm._v("公開")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row mb-3" }, [
+          _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+            _vm._v("タイトル")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+            _c("input", {
+              staticClass: "col-10",
+              attrs: { type: "text", name: "title" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row mb-3" }, [
+          _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+            _vm._v("説明")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+            _c("textarea", {
+              staticClass: "col-10",
+              attrs: { name: "description", rows: "4", cols: "40" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row mb-3" }, [
+          _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+            _vm._v("タグ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+            _c("input", {
+              staticClass: "col-10",
+              attrs: { type: "text", name: "tag" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form row mb-3" }, [
+          _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+            _vm._v("本文")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+            _c("textarea", {
+              staticClass: "col-10",
+              attrs: { id: "editor", name: "content" }
+            })
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b3915024", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

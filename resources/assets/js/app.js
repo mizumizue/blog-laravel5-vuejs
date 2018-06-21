@@ -47,7 +47,7 @@ const router = new VueRouter({
                 },
                 {
                     path: 'article/:id',
-                    component: require('./components/Layouts/AdminArticleDetail.vue'),
+                    component: require('./components/Layouts/AdminArticleEdit.vue'),
                 },
             ]
         },

@@ -61,7 +61,6 @@ export default {
         fetchArticle() {
             this.$http.get('/api/article/' + this.$route.params.id)
             .then(res =>  {
-                console.log(res.data)
                 this.article = res.data;
             })
         },

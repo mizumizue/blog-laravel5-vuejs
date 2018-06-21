@@ -10467,3 +10467,8 @@ a.tag:hover {
   color: #47a89c;
 }
 
+.form input,
+.form select {
+  height: 32px;
+}
+
