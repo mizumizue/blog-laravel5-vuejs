@@ -5,14 +5,9 @@ require('./bootstrap')
 
 Vue.use(VueRouter)
 
-/**
- * Read Components
- */
-// Front
+// ReadComponents
 Vue.component('FrontHeaderComponent', require('./components/Layouts/FrontHeader.vue'))
-// Admin
 Vue.component('AdminNaviMenuComponent', require('./components/Layouts/AdminNaviMenu.vue'))
-// Common
 Vue.component('CommonFooterComponent', require('./components/Layouts/CommonFooter.vue'))
 
 Vue.prototype.$http = window.axios
@@ -20,7 +15,6 @@ Vue.prototype.$http = window.axios
 const router = new VueRouter({
     mode: 'history',
     routes: [
-        // Front
         {
             path: '/',
             component: require('./components/Layouts/FrontApp.vue'),
@@ -39,11 +33,24 @@ const router = new VueRouter({
                 },
             ]
         },
-
-        // Admin
-        { path: '/admin', component: require('./components/Layouts/AdminTop.vue') },
-        { path: '/admin/article', component: require('./components/Layouts/AdminArticleIndex.vue') },
-        { path: '/admin/article/:id', component: require('./components/Layouts/AdminArticleDetail.vue') },
+        {
+            path: '/admin',
+            component: require('./components/Layouts/AdminApp.vue'),
+            children: [
+                {
+                    path: '/',
+                    component: require('./components/Layouts/AdminTop.vue'),
+                },
+                {
+                    path: 'article',
+                    component: require('./components/Layouts/AdminArticleIndex.vue'),
+                },
+                {
+                    path: 'article/:id',
+                    component: require('./components/Layouts/AdminArticleDetail.vue'),
+                },
+            ]
+        },
     ]
 })
 

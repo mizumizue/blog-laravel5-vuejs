@@ -1,9 +1,6 @@
 <template>
-<div id="FrontApp">
-    <FrontHeaderComponent
-        :title="siteSetting.title"
-        :description="siteSetting.description"
-    ></FrontHeaderComponent>
+<div id="AdminApp">
+    <AdminNaviMenuComponent :title="siteSetting.title"></AdminNaviMenuComponent>
 
     <router-view></router-view>
 

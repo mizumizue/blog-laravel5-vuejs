@@ -1,6 +1,10 @@
 <template>
-<div class="row">
-    <footer class="col-12 col-sm-12 col-md-12 text-center">© 2018 {{ domain }}</footer>
+<div class="container">
+    <div class="row">
+        <footer class="fixed-bottom bg-dark p-0 pt-1 pb-1 col-12 text-light text-center">
+            © 2018 {{ domain }}
+        </footer>
+    </div>
 </div>
 </template>
 
