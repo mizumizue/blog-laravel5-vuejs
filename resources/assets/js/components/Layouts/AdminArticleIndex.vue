@@ -23,9 +23,9 @@
                     <td>{{ article.published | published }}</td>
                     <td>{{ article.updated_at | moment }}</td>
                     <td>
-                        <router-link :to="'/admin/article/' + article.id">編集</router-link>
+                        <router-link :to="'/admin/article/edit/' + article.id">編集</router-link>
                         <span> / </span>
-                        <router-link :to="'/admin/article/destroy/' + article.id">削除</router-link>
+                        <router-link :to="'/admin/article/destroy' + article.id">削除</router-link>
                     </td>
                 </tr>
             </tbody>
@@ -47,6 +47,8 @@ export  default {
     },
     created() {
         this.fetchArticles()
+        console.log(this.$route.params.id)
+        console.log(this.$route)
     },
     data() {
         return {

@@ -6,6 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends MyModel
 {
+
+    protected $fillable = [
+        'id',
+        'code',
+        'title',
+        'description',
+    ];
+
     /**
      * タグ関連付け
      */

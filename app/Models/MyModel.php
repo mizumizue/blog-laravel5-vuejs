@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cake\I18n\Time;
+use Ramsey\Uuid\Uuid;
 
 /**
  * Customized Model Class
@@ -13,6 +14,17 @@ class MyModel extends Model
     protected $casts = [
         'id' => 'string'
     ];
+
+    /**
+     * Constructor
+     */
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+
+        // newした時に自動的にuuidを設定する。
+        $this->attributes['id'] = Uuid::uuid4()->toString();
+    }
 
     /**
      * CarbonをTimeオブジェクトに変換

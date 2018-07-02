@@ -22,12 +22,5 @@
         <!-- SimpleMDE -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-        <script>
-            const simplemde = new SimpleMDE({
-                element: document.getElementById("editor"),
-                forceSync: true,
-                spellChecker: false
-            });
-        </script>
     </body>
 </html>

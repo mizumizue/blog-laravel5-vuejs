@@ -31,6 +31,10 @@ const router = new VueRouter({
                     path: 'tag/:tagname',
                     component: require('./components/Layouts/FrontArticleIndex.vue'),
                 },
+                {
+                    path: 'sample',
+                    component: require('./components/Layouts/Sample.vue'),
+                },
             ]
         },
         {
@@ -46,7 +50,11 @@ const router = new VueRouter({
                     component: require('./components/Layouts/AdminArticleIndex.vue'),
                 },
                 {
-                    path: 'article/:id',
+                    path: 'article/create',
+                    component: require('./components/Layouts/AdminArticleEdit.vue'),
+                },
+                {
+                    path: 'article/edit/:id',
                     component: require('./components/Layouts/AdminArticleEdit.vue'),
                 },
             ]

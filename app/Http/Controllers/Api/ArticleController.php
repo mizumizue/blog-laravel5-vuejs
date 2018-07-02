@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Log;
 
 class ArticleController extends ApiController
@@ -33,7 +34,6 @@ class ArticleController extends ApiController
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -44,7 +44,18 @@ class ArticleController extends ApiController
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'code' => 'required|max:191',
+            'title' => 'required|max:191',
+            'description' => 'required|max:191',
+        ]);
+        $input = $request->all();
+        $article = new Article;
+        $result = $article->fill($input)->save();
+        if ($result) {
+            return response('success', 200);
+        }
+        return response('error', 400);
     }
 
     /**
@@ -62,7 +73,7 @@ class ArticleController extends ApiController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -74,18 +85,25 @@ class ArticleController extends ApiController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'code' => 'required|max:191',
+            'title' => 'required|max:191',
+            'description' => 'required|max:191',
+        ]);
+        $input = $request->all();
+        $result = Article::where('id', $id)->update($input);
+        return response($result);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  string  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

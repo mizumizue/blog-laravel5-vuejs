@@ -39,6 +39,7 @@ class ArticlesTableSeeder extends Seeder
             $time = $now->modify("-${subDays} days");
             $articles[] = [
                 'id' => $faker->uuid,
+                'code' => $faker->uuid,
                 'title' => ArticlesTableSeeder::$articleTitles[$i],
                 'description' => ArticlesTableSeeder::$articleTitles[$i],
                 'created_at' => $time,

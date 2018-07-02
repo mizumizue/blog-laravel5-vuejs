@@ -15,6 +15,7 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->uuid('id');
+            $table->string('code')->unique()->nullable(false);
             $table->string('title')->nullable(false);
             $table->string('description')->nullable(true);
             $table->boolean('published')->default(false);
