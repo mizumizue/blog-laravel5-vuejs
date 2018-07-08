@@ -10472,3 +10472,11 @@ a.tag:hover {
   height: 32px;
 }
 
+.form.tag-list input {
+  height: initial;
+}
+
+.form.tag-list label {
+  width: initial;
+}
+

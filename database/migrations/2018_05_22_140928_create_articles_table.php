@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('code')->unique()->nullable(false);
             $table->string('title')->nullable(false);
             $table->string('description')->nullable(true);
+            $table->mediumText('content')->nullable(true);
             $table->boolean('published')->default(false);
             $table->boolean('deleted')->default(false);
             $table->timestamps();

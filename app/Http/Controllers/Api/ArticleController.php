@@ -7,6 +7,7 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Log;
+use Ramsey\Uuid\Uuid;
 
 class ArticleController extends ApiController
 {
@@ -95,9 +96,22 @@ class ArticleController extends ApiController
             'title' => 'required|max:191',
             'description' => 'required|max:191',
         ]);
-        $input = $request->all();
-        $result = Article::where('id', $id)->update($input);
-        return response($result);
+        $inputArticle = $request->all();
+        unset($inputArticle['tags']);
+        $article = Article::where('id', $id)->with('tags')->firstOrFail();
+        $currentTags = collect($article->tags)->pluck('id');
+        $tags = [];
+        $article->tags()->detach($currentTags->toArray());
+        foreach ($request->tags as $tagId) {
+            $tags[] = [
+                'id' => Uuid::uuid4()->toString(),
+                'article_id' => $id,
+                'tag_id' => $tagId
+            ];
+        }
+        $article->tags()->attach($tags);
+        $article->fill($inputArticle)->update();
+        return response('success', 200);
     }
 
     /**

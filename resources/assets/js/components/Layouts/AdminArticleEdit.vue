@@ -42,12 +42,25 @@
     <div class="form row mb-3">
         <div class="label col-2 col-sm-2 col-md-2">本文</div>
         <div class="label col-10 col-sm-10 col-md-10">
-            <textarea id="editor" class="col-10 p-0" name="content" v-model="article.content"></textarea>
+            <textarea id="editor" class="col-10 p-0" name="content"></textarea>
         </div>
     </div>
-    <div class="form row mb-3">
+    <div class="form tag-list row mb-3">
         <div class="label col-2 col-sm-2 col-md-2">タグ</div>
-        <input class="col-10 p-0" type="text" name="tags">
+        <div class="label col-10 col-sm-10 col-md-10">
+            <ul class="list-inline">
+                <li class="list-inline-item" v-for="(tag, key, index) in tags" :key="index">
+                    <input :id="tag.id" type="checkbox" name="tags.id" :value="tag.id" v-model="article.tags">
+                    <label
+                        class="tag"
+                        :for="tag.id"
+                        :style="
+                            'background-color: #' + tag.background_color_code + ';' + 
+                            'color: #' + tag.font_color_code + ';'"
+                        >{{ tag.title }}</label>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="form row mb-3">
         <div class="label col-2 col-sm-2 col-md-2"></div>
@@ -63,13 +76,14 @@
 export default {
     mounted() {
         const editor = document.getElementById('editor');
-        const simplemde = new SimpleMDE({
+        this.simplemde = new SimpleMDE({
             element: editor,
             forceSync: true,
             spellChecker: false
         });
     },
     created() {
+        this.fetchTags()
         if (this.$route.params.id) {
             this.fetchArticle()
             return;
@@ -80,6 +94,8 @@ export default {
     data() {
         return {
             article: {},
+            tags: [],
+            seletedTags :[],
             hasMessage: false,
             updated: false,
             message: null,
@@ -101,6 +117,16 @@ export default {
             this.$http.get('/api/article/' + this.$route.params.id)
             .then(res =>  {
                 this.article = res.data;
+                this.article.tags = this.article.tags.map(function (tag) {
+                    return tag.id
+                });
+                this.simplemde.value(res.data.content)
+            })
+        },
+        fetchTags() {
+            this.$http.get('/api/tag')
+            .then(res =>  {
+                this.tags = res.data;
             })
         },
         createArticle() {
@@ -116,6 +142,7 @@ export default {
         },
         updateArticle() {
             const id = this.$route.params.id
+            this.article.content = this.simplemde.value()
             const article = this.article
             this.$http({
                 method: 'put',

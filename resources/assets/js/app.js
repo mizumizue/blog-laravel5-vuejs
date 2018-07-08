@@ -31,10 +31,6 @@ const router = new VueRouter({
                     path: 'tag/:tagname',
                     component: require('./components/Layouts/FrontArticleIndex.vue'),
                 },
-                {
-                    path: 'sample',
-                    component: require('./components/Layouts/Sample.vue'),
-                },
             ]
         },
         {

@@ -42,6 +42,7 @@ class ArticlesTableSeeder extends Seeder
                 'code' => $faker->uuid,
                 'title' => ArticlesTableSeeder::$articleTitles[$i],
                 'description' => ArticlesTableSeeder::$articleTitles[$i],
+                'content' => $faker->realText,
                 'created_at' => $time,
                 'updated_at' => $time,
             ];

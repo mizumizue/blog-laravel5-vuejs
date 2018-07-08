@@ -47,8 +47,6 @@ export  default {
     },
     created() {
         this.fetchArticles()
-        console.log(this.$route.params.id)
-        console.log(this.$route)
     },
     data() {
         return {
