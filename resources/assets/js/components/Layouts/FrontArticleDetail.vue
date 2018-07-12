@@ -6,17 +6,12 @@
             <header>
                 <h2>{{ article.title }}</h2>
                 <span class="publish-date float-right text-light-green">Published: {{ article.created_at | moment }}</span>
-                <div class="clearfix"></div>
+                <div class="clearfix mb-md-2"></div>
             </header>
             <section>
-                <h3>CakePHP</h3>
-                <p class="mb-4">
-                    CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。
-                    CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。
-                    CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。
-                    CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。
-                    CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。CakePHPについての記述です。
-                </p>
+                <div class="mb-md-2">
+                    {{ article.content }}
+                </div>
             </section>
             <footer>
                 <ul class="tags list-inline mb-md-0">

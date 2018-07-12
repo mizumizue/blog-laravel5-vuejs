@@ -5,7 +5,7 @@
             <header>
                 <h2><router-link :to="'/article/' + article.id">{{ article.title }}</router-link></h2>
             </header>
-            <section class="explain">
+            <section class="explain mb-md-1">
                 <p class="mb-1">{{ article.content }}</p>
             </section>
             <footer>
