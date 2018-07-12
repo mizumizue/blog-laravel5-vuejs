@@ -60,7 +60,7 @@ export  default {
     },
     methods: {
         fetchArticles() {
-            this.$http.get('/api/article')
+            this.$http.get('/api/admin_article')
             .then(res =>  {
                 this.articles = res.data;
             })

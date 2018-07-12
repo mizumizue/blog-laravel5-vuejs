@@ -15,6 +15,8 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'api'], function () {
     Route::resource('article', 'ArticleController');
+    Route::resource('admin_article', 'AdminArticleController');
     Route::resource('tag', 'TagController');
+    Route::resource('navi_menu', 'NaviMenuController');
     Route::resource('site_setting', 'SiteSettingController');
 });

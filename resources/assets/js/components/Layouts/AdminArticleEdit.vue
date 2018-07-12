@@ -114,7 +114,7 @@ export default {
             }
         },
         fetchArticle() {
-            this.$http.get('/api/article/' + this.$route.params.id)
+            this.$http.get('/api/admin_article/' + this.$route.params.id)
             .then(res =>  {
                 this.article = res.data;
                 this.article.tags = this.article.tags.map(function (tag) {
@@ -131,7 +131,7 @@ export default {
         },
         createArticle() {
             const article = this.article
-            this.$http.post('/api/article', article)
+            this.$http.post('/api/admin_article', article)
             .then(res => {
                 this.updated = true
                 this.hasMessage = true
@@ -146,7 +146,7 @@ export default {
             const article = this.article
             this.$http({
                 method: 'put',
-                url: '/api/article/' + id,
+                url: '/api/admin_article/' + id,
                 data: article
             })
             .then(res => {

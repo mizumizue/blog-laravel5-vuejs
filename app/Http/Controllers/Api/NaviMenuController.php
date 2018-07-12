@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NaviMenu;
 
 class NaviMenuController extends Controller
 {
@@ -14,7 +15,9 @@ class NaviMenuController extends Controller
      */
     public function index()
     {
-        //
+        $naviMenus = NaviMenu::orderBy('order', 'asc')
+                                ->get();
+        return response($naviMenus);
     }
 
     /**

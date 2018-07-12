@@ -66587,9 +66587,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['title']
+    props: ['title'],
+    created: function created() {
+        this.fetchNaviMenus();
+    },
+    data: function data() {
+        return {
+            naviMenus: []
+        };
+    },
+
+    methods: {
+        fetchNaviMenus: function fetchNaviMenus() {
+            var _this = this;
+
+            this.$http.get('/api/navi_menu').then(function (res) {
+                _this.naviMenus = res.data;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -66616,20 +66637,33 @@ var render = function() {
         "div",
         { staticClass: "navbar-collapse collapse", attrs: { id: "navbar" } },
         [
-          _c("ul", { staticClass: "navbar-nav mr-auto" }, [
-            _c(
-              "li",
-              { staticClass: "nav-item" },
-              [
-                _c(
-                  "router-link",
-                  { staticClass: "nav-link", attrs: { to: "/admin/article" } },
-                  [_vm._v("\n                    Article\n                ")]
-                )
-              ],
-              1
-            )
-          ])
+          _c(
+            "ul",
+            { staticClass: "navbar-nav mr-auto" },
+            _vm._l(_vm.naviMenus, function(naviMenu, key, index) {
+              return _c(
+                "li",
+                { key: index, staticClass: "nav-item" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { to: "/admin/" + naviMenu.code }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(naviMenu.title) +
+                          "\n                "
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            })
+          )
         ]
       )
     ],
@@ -67882,7 +67916,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchArticles: function fetchArticles() {
             var _this = this;
 
-            this.$http.get('/api/article').then(function (res) {
+            this.$http.get('/api/admin_article').then(function (res) {
                 _this.articles = res.data;
             });
         }
@@ -68126,7 +68160,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchArticle: function fetchArticle() {
             var _this = this;
 
-            this.$http.get('/api/article/' + this.$route.params.id).then(function (res) {
+            this.$http.get('/api/admin_article/' + this.$route.params.id).then(function (res) {
                 _this.article = res.data;
                 _this.article.tags = _this.article.tags.map(function (tag) {
                     return tag.id;
@@ -68145,7 +68179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this3 = this;
 
             var article = this.article;
-            this.$http.post('/api/article', article).then(function (res) {
+            this.$http.post('/api/admin_article', article).then(function (res) {
                 _this3.updated = true;
                 _this3.hasMessage = true;
                 _this3.message = '作成しました';
@@ -68161,7 +68195,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var article = this.article;
             this.$http({
                 method: 'put',
-                url: '/api/article/' + id,
+                url: '/api/admin_article/' + id,
                 data: article
             }).then(function (res) {
                 _this4.updated = true;

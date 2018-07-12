@@ -18,9 +18,12 @@
 
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <router-link class="nav-link" :to="'/admin/article'">
-                    Article
+            <li class="nav-item"
+                v-for="(naviMenu, key, index) in naviMenus"
+                :key="index"
+            >
+                <router-link class="nav-link" :to="'/admin/' + naviMenu.code">
+                    {{ naviMenu.title }}
                 </router-link>
             </li>
         </ul>
@@ -30,6 +33,22 @@
 
 <script>
 export default {
-    props: ['title']
+    props: ['title'],
+        created() {
+        this.fetchNaviMenus()
+    },
+    data() {
+        return {
+            naviMenus: []
+        }
+    },
+    methods: {
+        fetchNaviMenus() {
+            this.$http.get('/api/navi_menu')
+            .then(res =>  {
+                this.naviMenus = res.data
+            })
+        }
+    }
 }
 </script>
