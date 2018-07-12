@@ -21,9 +21,13 @@ Vue.js - フロント
 
 - MySQL5.6
 
-## WebServer
+## サーバー
 
 - Apache2.4
+
+## デザイン周り
+
+- Bootstrap4
 
 ## その他
 
