@@ -17,8 +17,8 @@ class NaviMenusTableSeeder extends Seeder
         $naviMenus = [
             [
                 'id' => $faker->uuid,
-                'title' => 'Home',
-                'code' => '',
+                'title' => 'Menus',
+                'code' => 'menu',
                 'order' => 1,
                 'visible' => true,
                 'created_at' => $now,
@@ -26,8 +26,8 @@ class NaviMenusTableSeeder extends Seeder
             ],
             [
                 'id' => $faker->uuid,
-                'title' => 'Menus',
-                'code' => 'menus',
+                'title' => 'Articles',
+                'code' => 'article',
                 'order' => 2,
                 'visible' => true,
                 'created_at' => $now,
@@ -35,8 +35,8 @@ class NaviMenusTableSeeder extends Seeder
             ],
             [
                 'id' => $faker->uuid,
-                'title' => 'Articles',
-                'code' => 'articles',
+                'title' => 'Images',
+                'code' => 'image',
                 'order' => 3,
                 'visible' => true,
                 'created_at' => $now,
@@ -44,18 +44,9 @@ class NaviMenusTableSeeder extends Seeder
             ],
             [
                 'id' => $faker->uuid,
-                'title' => 'Images',
-                'code' => 'images',
-                'order' => 4,
-                'visible' => true,
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'id' => $faker->uuid,
                 'title' => 'Users',
-                'code' => 'users',
-                'order' => 5,
+                'code' => 'user',
+                'order' => 4,
                 'visible' => true,
                 'created_at' => $now,
                 'updated_at' => $now,
