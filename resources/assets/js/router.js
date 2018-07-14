@@ -48,8 +48,8 @@ export default new VueRouter({
                     component: require('./components/AdminArticleEdit.vue'),
                 },
             ],
-            path: '/admin/login',
-            component: require('./components/AdminLogin.vue'),
+            // path: '/admin/login',
+            // component: require('./components/AdminLogin.vue'),
         },
     ],
 })
