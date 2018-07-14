@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $faker = Faker\Factory::create('ja_JP');
         $now = Time::now();
         $testUsers = [];
-        for ($i=0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $testUsers[] = [
                 'id' => $faker->uuid,
                 'name' => $faker->name,
