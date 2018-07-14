@@ -35,7 +35,8 @@
 </template>
 
 <script>
-import moment from 'moment'
+import http from '../services/http'
+import moment,{ isMoment } from 'moment'
 export  default {
     filters: {
         moment: function (date) {
@@ -60,9 +61,8 @@ export  default {
     },
     methods: {
         fetchArticles() {
-            this.$http.get('/api/admin_article')
-            .then(res =>  {
-                this.articles = res.data;
+            http.get('admin_article', res => {
+                this.articles = res.data
             })
         },
     }

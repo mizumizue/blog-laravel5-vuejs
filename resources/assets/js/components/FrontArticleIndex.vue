@@ -30,8 +30,8 @@
     </div>
 </div>
 </template>
-
 <script>
+import http from '../services/http'
 import moment from 'moment'
 export default {
     filters: {
@@ -39,7 +39,7 @@ export default {
             return moment(date).format('YYYY-MM-DD')
         }
     },
-    created() {
+    mounted () {
         this.fetchArticles()
     },
     data() {
@@ -54,14 +54,12 @@ export default {
     },
     methods: {
         fetchArticlesDefault() {
-            this.$http.get('/api/article')
-            .then(res =>  {
-                this.articles = res.data;
+            http.get('article', res => {
+                this.articles = res.data
             })
         },
         fetchArticlesByTag() {
-            this.$http.get('/api/article?tag=' + this.$route.params.tagname)
-            .then(res =>  {
+            http.get('article?tag=' + this.$route.params.tagname, res => {
                 this.articles = res.data;
             })
         },

@@ -12,7 +12,6 @@
     </header>
 </div>
 </template>
-
 <script>
 export default {
     props: ['title', 'description']

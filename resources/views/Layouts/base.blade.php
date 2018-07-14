@@ -13,9 +13,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
     <body>
-        <div id="VueContent">
-            <router-view></router-view>
-        </div>
+        <div id="app"></div>
 
         <!-- app.js -->
         <script src="{{ mix('js/app.js') }}"></script>

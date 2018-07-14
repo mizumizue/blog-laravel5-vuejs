@@ -71,8 +71,8 @@
     </div>
 </div>
 </template>
-
 <script>
+import http from '../services/http'
 export default {
     mounted() {
         const editor = document.getElementById('editor');
@@ -114,48 +114,36 @@ export default {
             }
         },
         fetchArticle() {
-            this.$http.get('/api/admin_article/' + this.$route.params.id)
-            .then(res =>  {
-                this.article = res.data;
+            http.get('admin_article/' + this.$route.params.id, res =>  {
+                this.article = res.data
                 this.article.tags = this.article.tags.map(function (tag) {
                     return tag.id
-                });
+                })
                 this.simplemde.value(res.data.content)
             })
         },
         fetchTags() {
-            this.$http.get('/api/tag')
-            .then(res =>  {
+            http.get('tag', res => {
                 this.tags = res.data;
             })
         },
         createArticle() {
             const article = this.article
-            this.$http.post('/api/admin_article', article)
-            .then(res => {
+            http.post('admin_article', article, res => {
                 this.updated = true
                 this.hasMessage = true
                 this.message = '作成しました'
-            }).catch(error => {
-                this.errors = error.response.errors
             })
         },
         updateArticle() {
             const id = this.$route.params.id
             this.article.content = this.simplemde.value()
             const article = this.article
-            this.$http({
-                method: 'put',
-                url: '/api/admin_article/' + id,
-                data: article
-            })
-            .then(res => {
+            http.put('admin_article/' + id, article, res => {
                 this.updated = true
                 this.hasMessage = true
                 this.message = '更新しました'
-            }).catch(error => {
-                this.errors = error.response.errors
-            });
+            })
         },
         removeMessage() {
             this.updated = false

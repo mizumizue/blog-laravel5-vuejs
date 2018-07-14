@@ -14,14 +14,12 @@
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'api'], function () {
+    Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::resource('article', 'ArticleController');
     Route::resource('navi_menu', 'NaviMenuController');
     Route::resource('site_setting', 'SiteSettingController');
-
-    Route::post('authenticate', 'AuthenticateController@authenticate');
-
+    Route::resource('admin_article', 'AdminArticleController');
+    Route::resource('tag', 'TagController');
     Route::group(['middleware' => 'jwt.auth'], function () {
-        Route::resource('tag', 'TagController');
-        Route::resource('admin_article', 'AdminArticleController');
     });
 });
