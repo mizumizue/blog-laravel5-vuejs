@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+        </div>
 
         <!-- app.js -->
         <script src="{{ mix('js/app.js') }}"></script>

@@ -6,13 +6,13 @@
     <div class="form row mb-3">
         <div class="label col-2 col-sm-2 col-md-2">E-mail</div>
         <div class="label col-10 col-sm-10 col-md-10">
-            <input type="text" name="email" v-model="loginInfo.email">
+            <input type="text" name="email" v-model="email" v-on:keyup.enter="login">
         </div>
     </div>
     <div class="form row mb-3">
         <div class="label col-2 col-sm-2 col-md-2">Password</div>
         <div class="label col-10 col-sm-10 col-md-10">
-            <input type="password" name="password" v-model="loginInfo.password">
+            <input type="password" name="password" v-model="password" v-on:keyup.enter="login">
         </div>
     </div>
     <div class="form row mb-3">
@@ -28,16 +28,15 @@ export default {
     props: ['siteSetting'],
     data() {
         return {
-            loginInfo: {
-                email: '',
-                password: ''
-            }
+            email: '',
+            password: ''
         }
     },
     methods: {
         login () {
-            http.post('authenticate', this.loginInfo, res => {
-                res.data.token
+            const param = { email: this.email, password: this.password }
+            http.post('authenticate', param, res => {
+                console.log('login success')
             })
         }
     }
