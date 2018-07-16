@@ -35,8 +35,14 @@ export default {
     methods: {
         login () {
             const param = { email: this.email, password: this.password }
-            http.post('authenticate', param, res => {
+            http.post('authenticate', param,
+            success => {
                 console.log('login success')
+                this.$store.commit('login', success.data.user)
+                this.$router.push({ path: '/admin' })
+            },
+            error => {
+                console.log('error')
             })
         }
     }

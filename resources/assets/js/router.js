@@ -1,12 +1,13 @@
 import VueRouter from 'vue-router'
 import Vue from 'vue'
+import store from './store'
 
 Vue.use(VueRouter)
 Vue.component('FrontHeaderComponent', require('./components/FrontHeader.vue'))
 Vue.component('AdminNaviMenuComponent', require('./components/AdminNaviMenu.vue'))
 Vue.component('CommonFooterComponent', require('./components/CommonFooter.vue'))
 
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes: [
         {
@@ -30,6 +31,7 @@ export default new VueRouter({
         {
             path: '/admin',
             component: require('./components/AdminApp.vue'),
+            meta: { requiresAuth: true },
             children: [
                 {
                     path: '/',
@@ -50,8 +52,26 @@ export default new VueRouter({
             ],
         },
         {
-            path: '/admin/login',
+            path: '/login',
             component: require('./components/AdminLogin.vue'),
         }
     ],
 })
+
+router.beforeEach ((to, from, next) => {
+    // 上位ルート含めて認証が必要なルートがあるかの確認
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (!store.state.authenticated) {
+            next({
+                path: '/login',
+                query: to.fullPath
+            })
+        } else {
+            next()
+        }
+    } else {
+        next()
+    }
+})
+
+export default router
