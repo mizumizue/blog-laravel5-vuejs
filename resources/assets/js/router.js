@@ -1,5 +1,5 @@
-import VueRouter from 'vue-router'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import store from './store'
 
 Vue.use(VueRouter)
@@ -54,6 +54,10 @@ const router = new VueRouter({
         {
             path: '/login',
             component: require('./components/AdminLogin.vue'),
+        },
+        {
+            path: '/logout',
+            component: require('./components/AdminLogout.vue'),
         }
     ],
 })

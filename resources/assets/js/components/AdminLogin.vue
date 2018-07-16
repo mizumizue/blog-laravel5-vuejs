@@ -37,7 +37,7 @@ export default {
             const param = { email: this.email, password: this.password }
             http.post('authenticate', param,
             success => {
-                console.log('login success')
+                this.$cookie.set('jwt-token', success.data.token)
                 this.$store.commit('login', success.data.user)
                 this.$router.push({ path: '/admin' })
             },

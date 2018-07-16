@@ -1,4 +1,5 @@
 import axios from 'axios'
+import VueCookie from 'vue-cookie'
 
 /**
  * Responsible for all HTTP requests.
@@ -27,10 +28,20 @@ export default {
     },
     init () {
         axios.defaults.baseURL = '/api'
-        axios.interceptors.request.use( config => {
+        axios.interceptors.request.use(config => {
             config.headers['X-CSRF-TOKEN'] = window.axios.defaults.headers.common['X-CSRF-TOKEN']
             config.headers['X-Requested-With'] = 'XMLHttpRequest'
+            config.headers['Authorization'] = `Bearer ${VueCookie.get('jwt-token')}`
             return config
+        })
+        axios.interceptors.response.use(response => {
+            const token = response.headers['Authorization'] || response.data['token']
+            if (token) {
+                VueCookie.set('jwt-token', token)
+            }
+            return response
+        }, error => {
+            return Promise.reject(error)
         })
     }
 }

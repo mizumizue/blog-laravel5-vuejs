@@ -1,12 +1,11 @@
 import Vue from 'vue'
-import VueCookie from 'vue-cookie'
 import store from './store'
 import router from './router'
 import http from './services/http'
-
-Vue.use(VueCookie)
+import VueCookie from 'vue-cookie'
 
 require('./bootstrap')
+Vue.use(VueCookie)
 
 const app = new Vue({
     store,

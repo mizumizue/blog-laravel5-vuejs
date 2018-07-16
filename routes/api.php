@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'api'], function () {
     // JWTでの認証用
+    Route::get('logout', 'AuthenticateController@logout')->middleware('jwt.refresh');
     Route::post('authenticate', 'AuthenticateController@authenticate');
 
     // 認証不要(基本的にフロント側で使うもの)

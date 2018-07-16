@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueCookie from 'vuex'
+import http from './services/http'
 
 Vue.use(Vuex)
+Vue.use(VueCookie)
 
 const store = new Vuex.Store({
     state: {
@@ -10,11 +13,14 @@ const store = new Vuex.Store({
     },
     mutations: {
         login (state, user) {
-            console.log('login mutation is success')
             state.user = user
             state.authenticated = true
-        }
-    }
+        },
+        logout (state) {
+            state.user = null
+            state.authenticated = false
+        },
+    },
 })
 
 export default store

@@ -40,4 +40,11 @@ class AuthenticateController extends ApiController
         $user = JWTAuth::parseToken()->authenticate();
         return response()->json(compact('user'));
     }
+
+    /**
+     * JWTトークンの削除
+     */
+    public function logout(Request $request)
+    {
+    }
 }
