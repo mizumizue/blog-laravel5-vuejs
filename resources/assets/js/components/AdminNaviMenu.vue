@@ -30,11 +30,11 @@
     </div>
 </nav>
 </template>
-
 <script>
+import http from '../services/http'
 export default {
     props: ['title'],
-        created() {
+    mounted () {
         this.fetchNaviMenus()
     },
     data() {
@@ -44,8 +44,7 @@ export default {
     },
     methods: {
         fetchNaviMenus() {
-            this.$http.get('/api/navi_menu')
-            .then(res =>  {
+            http.get('navi_menu', res =>  {
                 this.naviMenus = res.data
             })
         }

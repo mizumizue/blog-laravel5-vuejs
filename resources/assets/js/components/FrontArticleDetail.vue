@@ -35,8 +35,8 @@
     </div>
 </div>
 </template>
-
 <script>
+import http from '../services/http'
 import moment from 'moment'
 export default {
     filters: {
@@ -54,11 +54,10 @@ export default {
     },
     methods: {
         fetchArticle() {
-            this.$http.get('/api/article/' + this.$route.params.id)
-            .then(res =>  {
-                this.article = res.data;
+            http.get('article/' + this.$route.params.id, res => {
+                this.article = res.data
             })
-        },
+        }
     }
 }
 </script>

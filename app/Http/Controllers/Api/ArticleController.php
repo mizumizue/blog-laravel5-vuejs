@@ -23,10 +23,10 @@ class ArticleController extends ApiController
         if ($tagName) {
             $tag = Tag::with('articles')
                 ->where('title', $tagName)
-                ->where('published', '=', true)
                 ->firstOrFail();
             $articles = $tag->articles()
                 ->with('tags')
+                ->where('published', '=', true)
                 ->orderBy('created_at', 'desc')
                 ->get();
         }
