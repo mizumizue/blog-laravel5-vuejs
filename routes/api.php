@@ -12,10 +12,10 @@
 */
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 Route::group(['middleware' => 'api'], function () {
     // JWTでの認証用
-    Route::get('logout', 'AuthenticateController@logout')->middleware('jwt.refresh');
     Route::post('authenticate', 'AuthenticateController@authenticate');
 
     // 認証不要(基本的にフロント側で使うもの)
@@ -28,4 +28,10 @@ Route::group(['middleware' => 'api'], function () {
         Route::resource('admin_article', 'AdminArticleController');
         Route::resource('tag', 'TagController');
     });
+
+    // JWTログアウト tymondesigns/jwt-auth#1399対策
+    try {
+        Route::get('logout', 'AuthenticateController@logout')->middleware('jwt.refresh');
+    } catch (DecryptException $e) {
+    }
 });

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueCookie from 'vuex'
-import http from './services/http'
 
 Vue.use(Vuex)
 Vue.use(VueCookie)

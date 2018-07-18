@@ -42,7 +42,6 @@ export default {
                 this.$router.push({ path: '/admin' })
             },
             error => {
-                console.log('error')
             })
         }
     }

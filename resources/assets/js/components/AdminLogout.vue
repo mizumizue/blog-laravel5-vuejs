@@ -10,17 +10,17 @@ import http from '../services/http'
 export default {
     mounted () {
         this.logout()
-        this.$cookie.delete('jwt-token')
     },
     methods: {
         logout () {
             http.get('logout', 
             success => {
                 console.log('logout success')
+                this.$cookie.delete('jwt-token')
                 this.$store.commit('logout')
+                this.$router.push('login')
             },
             error => {
-                console.log('logout error')
             })
         }
     }
