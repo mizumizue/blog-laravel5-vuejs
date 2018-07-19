@@ -5,9 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Log;
-use Ramsey\Uuid\Uuid;
 
 class ArticleController extends ApiController
 {
@@ -18,22 +15,19 @@ class ArticleController extends ApiController
      */
     public function index(Request $request)
     {
-        $articles = null;
-        $tagName = $request->tag ?? null;
-        if ($tagName) {
-            $tag = Tag::with('articles')
-                ->where('title', $tagName)
-                ->firstOrFail();
+        if ($request->tag) {
+            $tag = Tag::with('articles')->where('title', $request->tag)->firstOrFail();
             $articles = $tag->articles()
-                ->with('tags')
-                ->where('published', '=', true)
-                ->orderBy('created_at', 'desc')
-                ->get();
+                            ->with('tags')
+                            ->where('published', '=', true)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
+            return response($articles);
         }
-        $articles = $articles ?? Article::with('tags')
-                                    ->orderBy('created_at', 'desc')
-                                    ->where('published', '=', true)
-                                    ->get();
+        $articles = Article::with('tags')
+                            ->orderBy('created_at', 'desc')
+                            ->where('published', '=', true)
+                            ->get();
         return response($articles);
     }
 
