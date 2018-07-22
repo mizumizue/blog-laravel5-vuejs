@@ -18,7 +18,14 @@
             <tbody>
                 <tr v-for="(tag, key, index) in tags"
                     :key="index">
-                    <td>{{ tag.title }}</td>
+                    <td>
+                        <span
+                            class="tag"
+                            :style="
+                                'background-color: #' + tag.background_color_code + ';' + 
+                                'color: #' + tag.font_color_code + ';'"
+                            >{{ tag.title }}</span>
+                    </td>
                     <td>{{ tag.updated_at | moment }}</td>
                     <td>
                         <router-link class="btn-link" :to="'/admin/tag/edit/' + tag.id">編集</router-link>
