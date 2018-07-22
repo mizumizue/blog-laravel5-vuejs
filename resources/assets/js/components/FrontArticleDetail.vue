@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         fetchArticle() {
-            http.get('article/' + this.$route.params.id, res => {
+            http.get('article/' + this.$route.params.code, res => {
                 this.article = res.data
                 this.article.content = marked(this.article.content)
             })

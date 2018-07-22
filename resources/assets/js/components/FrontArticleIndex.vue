@@ -3,7 +3,7 @@
     <div class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
         <article class="mb-4" v-for="(article, key, index) in articles" :key="index">
             <header>
-                <h2><router-link :to="'/' + article.code">{{ article.title }}</router-link></h2>
+                <h2><router-link :to="'/article/' + article.code">{{ article.title }}</router-link></h2>
             </header>
             <section class="explain mb-md-1">
                 <p class="mb-1">{{ article.description }}</p>
