@@ -73,9 +73,8 @@ class AdminArticleController extends ApiController
         ]);
         $input = $request->all();
         $article = Article::where('id', $id)->with('tags')->firstOrFail();
-        $article->tags()->detach($input['tags']);
         $tags = $this->createArticleTags($id, $input['tags']);
-        $article->tags()->attach($tags);
+        $article->tags()->sync($tags);
         unset($input['tags']);
         $article->fill($input)->update();
         return response('success', 200);
