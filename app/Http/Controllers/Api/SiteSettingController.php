@@ -28,6 +28,11 @@ class SiteSettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // TODO Validate
+        // $request->validate([
+        // ]);
+        $siteSetting = SiteSetting::where('id', $id)->firstOrFail();
+        $siteSetting->fill($request->all())->update();
+        return response('success', 200);
     }
 }

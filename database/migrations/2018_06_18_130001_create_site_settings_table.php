@@ -15,9 +15,9 @@ class CreateSiteSettingsTable extends Migration
     {
         Schema::create('site_settings', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('url')->nullable(true);
             $table->string('title')->nullable(true);
             $table->string('description')->nullable(true);
+            $table->string('url')->nullable(true);
             $table->string('domain')->nullable(true);
             $table->string('author')->nullable(true);
             $table->string('email')->nullable(true);

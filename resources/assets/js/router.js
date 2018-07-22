@@ -62,6 +62,10 @@ const router = new VueRouter({
                     path: 'tag/edit/:id',
                     component: require('./components/AdminTagEdit.vue'),
                 },
+                {
+                    path: 'site_setting',
+                    component: require('./components/AdminSiteSetting.vue'),
+                },
             ],
         },
         {
