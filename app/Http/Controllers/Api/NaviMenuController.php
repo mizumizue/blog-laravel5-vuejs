@@ -15,19 +15,8 @@ class NaviMenuController extends Controller
      */
     public function index()
     {
-        $naviMenus = NaviMenu::orderBy('order', 'asc')
-                                ->get();
+        $naviMenus = NaviMenu::where('visible', true)->orderBy('order', 'asc')->get();
         return response($naviMenus);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -48,17 +37,6 @@ class NaviMenuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
