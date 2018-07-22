@@ -1,14 +1,19 @@
 <template>
-<div class="container">
+<div class="Footer container">
     <div class="row">
         <footer class="fixed-bottom bg-dark p-0 pt-1 pb-1 col-12 text-light text-center">
-            © 2018 {{ domain }}
+            {{ footerDomain }}
         </footer>
     </div>
 </div>
 </template>
 <script>
 export default {
-    props: ['domain']
+    props: ['domain'],
+    computed: {
+        footerDomain() {
+            return '© 2018 ' + this.domain
+        }
+    }
 }
 </script>

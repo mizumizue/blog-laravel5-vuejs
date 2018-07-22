@@ -3,9 +3,9 @@
     <FrontHeaderComponent
         :title="siteSetting.title"
         :description="siteSetting.description"
-    ></FrontHeaderComponent>
-    <router-view></router-view>
-    <CommonFooterComponent :domain="siteSetting.domain"></CommonFooterComponent>
+    />
+    <router-view/>
+    <CommonFooterComponent :domain="siteSetting.domain"/>
 </div>
 </template>
 <script>
