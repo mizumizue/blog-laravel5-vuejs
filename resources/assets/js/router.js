@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import store from './store'
 
 Vue.use(VueRouter)
+Vue.component('MessageComponent', require('./components/Message.vue'))
 Vue.component('FrontHeaderComponent', require('./components/FrontHeader.vue'))
 Vue.component('AdminNaviMenuComponent', require('./components/AdminNaviMenu.vue'))
 Vue.component('CommonFooterComponent', require('./components/CommonFooter.vue'))

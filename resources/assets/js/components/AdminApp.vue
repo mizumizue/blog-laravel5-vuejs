@@ -1,11 +1,13 @@
 <template>
 <div id="AdminApp">
-    <AdminNaviMenuComponent :title="siteSetting.title"></AdminNaviMenuComponent>
-    <router-view></router-view>
-    <CommonFooterComponent :domain="siteSetting.domain"></CommonFooterComponent>
+    <AdminNaviMenuComponent :title="siteSetting.title"/>
+    <MessageComponent/>
+    <router-view/>
+    <CommonFooterComponent :domain="siteSetting.domain"/>
 </div>
 </template>
 <script>
+import Message from './Message'
 export default {
     props: ['siteSetting']
 }

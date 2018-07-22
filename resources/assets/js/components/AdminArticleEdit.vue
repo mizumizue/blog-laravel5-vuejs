@@ -154,11 +154,11 @@ export default {
             this.article.tags = this.seletedTags
             http.post('admin_article', article,
             (function(success){
-                console.log('success')
+                self.$store.commit('modifiedSuccessMessage', '記事を作成しました.')
                 self.$router.push({ path: '/admin/article' })
             }),
             (function(error){
-                console.log('error')
+                self.$store.commit('modifiedErrorMessage', '記事の作成に失敗しました.')
                 self.errors = error.response.data.errors
             }))
         },
@@ -170,11 +170,11 @@ export default {
             this.article.content = this.simplemde.value()
             http.put('admin_article/' + id, article,
             (function(success){
-                console.log('success')
+                self.$store.commit('modifiedSuccessMessage', '記事を更新しました.')
                 self.$router.push({ path: '/admin/article' })
             }),
             (function(error){
-                console.log('error')
+                self.$store.commit('modifiedErrorMessage', '記事の更新に失敗しました.')
                 self.errors = error.response.data.errors
             }))
         }
