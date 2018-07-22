@@ -99,7 +99,7 @@ class AdminArticleController extends ApiController
      * @param array $tagIds
      * @return array $articleTags;
      */
-    private function createArticleTags(string $articleId, array $tagIds)
+    private function createArticleTags(string $articleId, array $tagIds):array
     {
         $articleTags = [];
         foreach ($tagIds as $tagId) {
