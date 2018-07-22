@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Log;
 use Ramsey\Uuid\Uuid;
 
 class AdminArticleController extends ApiController
@@ -18,19 +16,8 @@ class AdminArticleController extends ApiController
      */
     public function index(Request $request)
     {
-        $articles = Article::with('tags')
-                        ->orderBy('created_at', 'desc')
-                        ->get();
+        $articles = Article::with('tags')->orderBy('created_at', 'desc')->get();
         return response($articles);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
     }
 
     /**
@@ -42,17 +29,18 @@ class AdminArticleController extends ApiController
     public function store(Request $request)
     {
         $request->validate([
-            'code' => 'required|max:191',
+            'published' => 'required|boolean',
+            'code' => "required|unique:articles,code|max:191",
             'title' => 'required|max:191',
             'description' => 'required|max:191',
+            'content' => 'required'
         ]);
-        $input = $request->all();
         $article = new Article;
-        $result = $article->fill($input)->save();
-        if ($result) {
-            return response('success', 200);
-        }
-        return response('error', 400);
+        $input = $request->all();
+        $tags = $this->createArticleTags($article->id, $input['tags']);
+        $article->tags()->attach($tags);
+        $article->fill($input)->save();
+        return response('success', 200);
     }
 
     /**
@@ -63,21 +51,8 @@ class AdminArticleController extends ApiController
      */
     public function show($id)
     {
-        $article = Article::with('tags')
-                            ->where('id', '=', $id)
-                            ->firstOrFail();
+        $article = Article::with('tags')->where('id', '=', $id)->firstOrFail();
         return response($article);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  string  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -90,26 +65,19 @@ class AdminArticleController extends ApiController
     public function update(Request $request, $id)
     {
         $request->validate([
-            'code' => 'required|max:191',
+            'published' => 'required|boolean',
+            'code' => "required|unique:articles,code,{$id},id|max:191",
             'title' => 'required|max:191',
             'description' => 'required|max:191',
-            'published' => 'required',
+            'content' => 'required'
         ]);
-        $inputArticle = $request->all();
-        unset($inputArticle['tags']);
+        $input = $request->all();
         $article = Article::where('id', $id)->with('tags')->firstOrFail();
-        $currentTags = collect($article->tags)->pluck('id');
-        $tags = [];
-        $article->tags()->detach($currentTags->toArray());
-        foreach ($request->tags as $tagId) {
-            $tags[] = [
-                'id' => Uuid::uuid4()->toString(),
-                'article_id' => $id,
-                'tag_id' => $tagId
-            ];
-        }
+        $article->tags()->detach($input['tags']);
+        $tags = $this->createArticleTags($id, $input['tags']);
         $article->tags()->attach($tags);
-        $article->fill($inputArticle)->update();
+        unset($input['tags']);
+        $article->fill($input)->update();
         return response('success', 200);
     }
 
@@ -121,6 +89,27 @@ class AdminArticleController extends ApiController
      */
     public function destroy($id)
     {
-        //
+        $article = Article::where('id', '=', $id)->firstOrFail();
+        $article->delete();
+        return response('success', 200);
+    }
+
+    /**
+     * createArticleTagData
+     * @param string $articleId
+     * @param array $tagIds
+     * @return array $articleTags;
+     */
+    private function createArticleTags(string $articleId, array $tagIds)
+    {
+        $articleTags = [];
+        foreach ($tagIds as $tagId) {
+            $articleTags[] = [
+                'id' => Uuid::uuid4()->toString(),
+                'article_id' => $articleId,
+                'tag_id' => $tagId
+            ];
+        }
+        return $articleTags;
     }
 }

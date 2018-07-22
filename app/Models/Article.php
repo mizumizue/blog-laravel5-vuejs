@@ -13,6 +13,7 @@ class Article extends MyModel
         'title',
         'description',
         'published',
+        'content',
     ];
 
     /**
