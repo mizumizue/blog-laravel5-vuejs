@@ -24,7 +24,7 @@ const router = new VueRouter({
                     component: require('./components/FrontArticleIndex.vue'),
                 },
                 {
-                    path: 'article/:id',
+                    path: '/:id',
                     component: require('./components/FrontArticleDetail.vue'),
                 },
             ]

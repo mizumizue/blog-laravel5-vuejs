@@ -9,9 +9,7 @@
                 <div class="clearfix mb-md-2"></div>
             </header>
             <section>
-                <div class="mb-md-2">
-                    {{ article.content }}
-                </div>
+                <div class="mb-md-2" v-html="article.content"></div>
             </section>
             <footer>
                 <ul class="tags list-inline mb-md-0">
@@ -42,7 +40,7 @@ export default {
     filters: {
         moment: function (date) {
             return moment(date).format('YYYY-MM-DD')
-        }
+        },
     },
     created() {
         this.fetchArticle()
@@ -56,6 +54,7 @@ export default {
         fetchArticle() {
             http.get('article/' + this.$route.params.id, res => {
                 this.article = res.data
+                this.article.content = marked(this.article.content)
             })
         }
     }

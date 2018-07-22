@@ -3,10 +3,10 @@
     <div class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
         <article class="mb-4" v-for="(article, key, index) in articles" :key="index">
             <header>
-                <h2><router-link :to="'/article/' + article.id">{{ article.title }}</router-link></h2>
+                <h2><router-link :to="'/' + article.code">{{ article.title }}</router-link></h2>
             </header>
             <section class="explain mb-md-1">
-                <p class="mb-1">{{ article.content }}</p>
+                <p class="mb-1">{{ article.description }}</p>
             </section>
             <footer>
                 <ul class="tags list-inline mb-0">
@@ -19,8 +19,7 @@
                             :to="'/tag/' + tag.title"
                             :style="
                                 'background-color: #' + tag.background_color_code + ';'
-                                + 'font-color: #' + tag.font_color_code + ';'
-                            "
+                                + 'font-color: #' + tag.font_color_code + ';'"
                         >{{ tag.title }}</router-link>
                     </li>
                 </ul>
@@ -35,9 +34,9 @@ import http from '../services/http'
 import moment from 'moment'
 export default {
     filters: {
-        moment: function (date) {
+        moment: (date) => {
             return moment(date).format('YYYY-MM-DD')
-        }
+        },
     },
     mounted () {
         this.fetchArticles()
@@ -54,12 +53,14 @@ export default {
     },
     methods: {
         fetchArticlesDefault() {
-            http.get('article', res => {
+            http.get('article',
+            res => {
                 this.articles = res.data
             })
         },
         fetchArticlesByTag() {
-            http.get('article?tag=' + this.$route.params.tagname, res => {
+            http.get('article?tag=' + this.$route.params.tagname,
+            res => {
                 this.articles = res.data;
             })
         },

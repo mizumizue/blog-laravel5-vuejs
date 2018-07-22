@@ -34,12 +34,12 @@ class ArticleController extends ApiController
     /**
      * Display the specified resource.
      *
-     * @param  string  $id
+     * @param  string  $code
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        $article = Article::with('tags')->where('id', '=', $id)->firstOrFail();
+        $article = Article::with('tags')->where('code', '=', $code)->firstOrFail();
         return response($article);
     }
 }
