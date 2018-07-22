@@ -50,6 +50,18 @@ const router = new VueRouter({
                     path: 'article/edit/:id',
                     component: require('./components/AdminArticleEdit.vue'),
                 },
+                {
+                    path: 'tag',
+                    component: require('./components/AdminTagIndex.vue'),
+                },
+                {
+                    path: 'tag/create',
+                    component: require('./components/AdminTagEdit.vue'),
+                },
+                {
+                    path: 'tag/edit/:id',
+                    component: require('./components/AdminTagEdit.vue'),
+                },
             ],
         },
         {

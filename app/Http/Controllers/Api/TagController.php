@@ -27,7 +27,14 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:191',
+            'font_color_code' => "required|regex:/^[0-9A-F]{6}$/",
+            'background_color_code' => "required|regex:/^[0-9A-F]{6}$/",
+        ]);
+        $tag = new Tag;
+        $tag->fill($request->all())->save();
+        return response('success', 200);
     }
 
     /**
@@ -38,7 +45,8 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        $tag = Tag::where('id', $id)->firstOrFail();
+        return response($tag);
     }
 
     /**
@@ -50,7 +58,14 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:191',
+            'font_color_code' => "required|regex:/^[0-9A-F]{6}$/",
+            'background_color_code' => "required|regex:/^[0-9A-F]{6}$/",
+        ]);
+        $tag = Tag::where('id', $id)->firstOrFail();
+        $tag->fill($request->all())->update();
+        return response('success', 200);
     }
 
     /**
@@ -61,6 +76,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::where('id', $id)->firstOrFail();
+        $tag->delete();
+        return response('success', 200);
     }
 }
