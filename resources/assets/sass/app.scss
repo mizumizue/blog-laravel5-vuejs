@@ -66,10 +66,24 @@ a.tag:hover {
         width: initial;
     }
 }
+// ブログ記事詳細のデザイン
 #FrontArticleDetail {
+    section {
+        h1 {
+            font-size: 1.5rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-size: 1.0rem;
+        }
+    }
     pre {
-        background-color: #E6E6E6;
-        font-size: 1.0rem;
+        background-color: #F5F5F5;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+        font-size: 0.825rem;
         padding: 10px;
     }
 }
