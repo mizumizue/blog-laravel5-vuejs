@@ -10,7 +10,7 @@ Vue.js - フロント
 - ログイン機能(Vue.js側で実装)
 - API認証(ログイン時に取得したJWTトークンを使用した場合のみAPIを叩けるように実装)
 - Markdownを使用しての記事編集機能(EditorをSimpleMDE、パーサーをMarkedで実装)
-- SPA(APIをLaravel、Vue.jsでAPIを叩いて(Axios)データ取得、画面遷移はVue-Routerで制御、Component間のデータ受け渡しをVuexで実装)
+- SPA(APIをLaravel、Vue.jsでAPIを叩いて(Axios)データ取得、画面遷移はVue-Routerで制御、Component間のデータ受け渡しをVuexで実装)
 
 ## 環境、言語、ライブラリ
 
