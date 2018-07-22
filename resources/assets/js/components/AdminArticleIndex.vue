@@ -23,9 +23,9 @@
                     <td>{{ article.published | published }}</td>
                     <td>{{ article.updated_at | moment }}</td>
                     <td>
-                        <router-link :to="'/admin/article/edit/' + article.id">編集</router-link>
-                        <span> / </span>
-                        <router-link :to="'/admin/article/destroy' + article.id">削除</router-link>
+                        <router-link class="btn-link" :to="'/admin/article/edit/' + article.id">編集</router-link>
+                        <span>/</span>
+                        <button class="btn-link border-0" type="button" :value="article.id" v-on:click="destroy">削除</button>
                     </td>
                 </tr>
             </tbody>
@@ -46,17 +46,12 @@ export  default {
             return published ? '公開' : '非公開'
         }
     },
-    created() {
+    mounted() {
         this.fetchArticles()
     },
     data() {
         return {
             articles: []
-        }
-    },
-    watch: { 
-        '$route' (to, from) {
-            this.fetchArticles()
         }
     },
     methods: {
@@ -65,6 +60,18 @@ export  default {
                 this.articles = res.data
             })
         },
+        destroy(event) {
+            const self = this
+            const id = event.target.value
+            http.delete('admin_article/' + id, {},
+            (function(success){
+                console.log('success')
+                self.fetchArticles()
+            }),
+            (function(error){
+                console.log('error')
+            }))
+        }
     }
 }
 </script>
