@@ -16,11 +16,12 @@ class SiteSettingsTableSeeder extends Seeder
         $now = Time::now();
         $siteSettings = [
             'id' => $faker->uuid,
-            'url' => 'http://takeiteasy.localhost.com',
-            'title' => 'take IT easy',
-            'description' => 'むせきにんなぎじゅつぶろぐです',
-            'domain' => 'takeiteasy.localhost.com',
-            'author' => 'Kenta Mizushima',
+            'url' => 'https://'.env('DOMAIN'),
+            'title' => env('APP_NAME'),
+            'description' => env('SITE_DESCRIPTION'),
+            'domain' => env('DOMAIN'),
+            'author' => env('AUTHOR'),
+            'email' => env('AUTHOR_EMAIL'),
             'image' => null,
             'created_at' => $now,
             'updated_at' => $now,
