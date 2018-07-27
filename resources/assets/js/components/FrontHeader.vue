@@ -6,7 +6,7 @@
         <hr class="col-5 col-sm-5 col-md-2 text-center">
         <div id="search" class="mb-4">
             <div class="col-6 col-sm-6 col-md-6 mx-auto">
-                <input type="text" class="form-control text-center p-0" placeholder="けんさくする">
+                <input type="text" class="form-control text-center p-0" placeholder="しぼりこみけんさく" v-on:keyup.enter="pushFilteredIndex">
             </div>
         </div>
     </header>
@@ -14,6 +14,16 @@
 </template>
 <script>
 export default {
-    props: ['title', 'description']
+    props: ['title', 'description'],
+    methods: {
+        pushFilteredIndex(event) {
+            const keyword = encodeURIComponent(event.target.value)
+            if (keyword) {
+                this.$router.push({ path: '/?keyword=' + keyword })
+            } else {
+                this.$router.push({ path: '/' })
+            }
+        }
+    }
 }
 </script>

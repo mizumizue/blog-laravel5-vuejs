@@ -55,7 +55,7 @@ export default {
         fetchArticlesDefault() {
             http.get('article',
             res => {
-                this.articles = res.data
+                this.articles = this.filterByKeyword(res.data)
             })
         },
         fetchArticlesByTag() {
@@ -70,7 +70,23 @@ export default {
             } else {
                 this.fetchArticlesDefault()
             }
-        }
+        },
+        filterByKeyword(articles) {
+            if (!this.$route.query.keyword) {
+                console.log('Keyword is not found.')
+                return articles
+            }
+            const keyword = decodeURIComponent(this.$route.query.keyword).toLowerCase()
+            const filtered = articles.filter(function(article) {
+                let tags = article.tags.map(function(tag) {
+                    return tag.title
+                })
+                return article.title.toLowerCase().indexOf(keyword) !== -1
+                    || article.description.toLowerCase().indexOf(keyword) !== -1
+                    || tags.join(',').toLowerCase().indexOf(keyword) !== -1
+            })
+            return filtered
+        },
     }
 }
 </script>
