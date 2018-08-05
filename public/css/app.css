@@ -10480,3 +10480,23 @@ a.tag:hover {
   width: initial;
 }
 
+#FrontArticleDetail section h1 {
+  font-size: 1.5rem;
+}
+
+#FrontArticleDetail section h2 {
+  font-size: 1.2rem;
+}
+
+#FrontArticleDetail section h3 {
+  font-size: 1.0rem;
+}
+
+#FrontArticleDetail pre {
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-size: 0.825rem;
+  padding: 10px;
+}
+
