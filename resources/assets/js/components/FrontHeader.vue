@@ -5,7 +5,7 @@
         <p>{{ description }}</p>
         <hr class="col-5 col-sm-5 col-md-2 text-center">
         <div id="search" class="mb-4">
-            <div class="col-6 col-sm-6 col-md-6 mx-auto">
+            <div class="col-4 col-sm-4 col-md-4 mx-auto">
                 <input type="text" class="form-control text-center p-0" placeholder="しぼりこみけんさく" v-on:keyup.enter="pushFilteredIndex">
             </div>
         </div>
