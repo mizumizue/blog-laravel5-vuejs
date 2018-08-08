@@ -4,6 +4,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- SEO -->
+        <meta name="description" content="{{ $siteSetting->description }}">
+        <meta name="keywords" content="{{ $siteSetting->keywords }}">
+        <!-- OGP -->
+        <meta property="og:title" content="{{ $siteSetting->title  }}">
+        <meta property="og:url" content="{{ $siteSetting->url  }}">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="{{ $siteSetting->title }}">
+        <meta property="og:description" content="{{ $siteSetting->description }}">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ $siteSetting->title }}</title>
