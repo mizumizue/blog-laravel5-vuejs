@@ -17,6 +17,7 @@ class CreateSiteSettingsTable extends Migration
             $table->uuid('id');
             $table->string('title')->nullable(true);
             $table->string('description')->nullable(true);
+            $table->string('keywords')->nullable(true);
             $table->string('url')->nullable(true);
             $table->string('domain')->nullable(true);
             $table->string('author')->nullable(true);

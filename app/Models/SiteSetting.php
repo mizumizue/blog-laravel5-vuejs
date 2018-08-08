@@ -9,6 +9,7 @@ class SiteSetting extends MyModel
     protected $fillable = [
         'title',
         'description',
+        'keywords',
         'url',
         'domain',
         'author',

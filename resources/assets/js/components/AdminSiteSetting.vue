@@ -32,6 +32,20 @@
         </div>
     </div>
     <div class="form row mb-3">
+        <div class="label col-2 col-sm-2 col-md-2">キーワード</div>
+        <div class="label col-10 col-sm-10 col-md-10">
+            <textarea class="w-100 p-0" name="keywords" rows="4" cols="40" v-model="siteSetting.keywords"></textarea>
+            <div class="error" show="errors.keywords">
+                <ul class="list-unstyled">
+                    <li
+                        class="list-group-item-danger p-1"
+                        v-for="(error, key, index) in errors.keywords"
+                        :key="index">{{ error }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form row mb-3">
         <div class="label col-2 col-sm-2 col-md-2">URL</div>
         <div class="label col-10 col-sm-10 col-md-10">
             <input class="w-100 p-0" type="text" name="url" v-model="siteSetting.url">
@@ -121,7 +135,7 @@ export default {
             http.put('site_setting/' + siteSetting.id, siteSetting,
             (function(success){
                 self.$store.commit('modifiedSuccessMessage', 'サイト設定を更新しました.')
-                self.$router.push({ path: '/admin/site_setting' })
+                self.$router.push({ path: '/admin' })
             }),
             (function(error){
                 self.$store.commit('modifiedErrorMessage', 'サイト設定の更新に失敗しました.')

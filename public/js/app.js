@@ -49820,6 +49820,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -49847,7 +49861,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var siteSetting = this.siteSetting;
             __WEBPACK_IMPORTED_MODULE_0__services_http__["a" /* default */].put('site_setting/' + siteSetting.id, siteSetting, function (success) {
                 self.$store.commit('modifiedSuccessMessage', 'サイト設定を更新しました.');
-                self.$router.push({ path: '/admin/site_setting' });
+                self.$router.push({ path: '/admin' });
             }, function (error) {
                 self.$store.commit('modifiedErrorMessage', 'サイト設定の更新に失敗しました.');
                 self.errors = error.response.data.errors;
@@ -49950,6 +49964,54 @@ var render = function() {
                 "ul",
                 { staticClass: "list-unstyled" },
                 _vm._l(_vm.errors.description, function(error, key, index) {
+                  return _c(
+                    "li",
+                    { key: index, staticClass: "list-group-item-danger p-1" },
+                    [_vm._v(_vm._s(error))]
+                  )
+                })
+              )
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form row mb-3" }, [
+        _c("div", { staticClass: "label col-2 col-sm-2 col-md-2" }, [
+          _vm._v("キーワード")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "label col-10 col-sm-10 col-md-10" }, [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.siteSetting.keywords,
+                expression: "siteSetting.keywords"
+              }
+            ],
+            staticClass: "w-100 p-0",
+            attrs: { name: "keywords", rows: "4", cols: "40" },
+            domProps: { value: _vm.siteSetting.keywords },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.siteSetting, "keywords", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "error", attrs: { show: "errors.keywords" } },
+            [
+              _c(
+                "ul",
+                { staticClass: "list-unstyled" },
+                _vm._l(_vm.errors.keywords, function(error, key, index) {
                   return _c(
                     "li",
                     { key: index, staticClass: "list-group-item-danger p-1" },
