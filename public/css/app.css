@@ -10488,16 +10488,42 @@ a.tag:hover {
   font-size: 2.0rem;
 }
 
+#FrontArticleDetail section p {
+  margin: 0;
+}
+
+#FrontArticleDetail section h1,
+#FrontArticleDetail section h2,
+#FrontArticleDetail section h3 {
+  border-bottom: 1px solid #47a89c;
+  padding-bottom: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 #FrontArticleDetail section h1 {
   font-size: 1.5rem;
+}
+
+#FrontArticleDetail section h1::before {
+  font-weight: bold;
+  content: "# ";
 }
 
 #FrontArticleDetail section h2 {
   font-size: 1.2rem;
 }
 
+#FrontArticleDetail section h2::before {
+  content: "## ";
+}
+
 #FrontArticleDetail section h3 {
   font-size: 1.0rem;
+}
+
+#FrontArticleDetail section h3::before {
+  content: "### ";
 }
 
 #FrontArticleDetail pre {

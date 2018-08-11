@@ -9,8 +9,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 body {
@@ -23,7 +23,7 @@ a {
 a:hover {
     color: #4D4D4D;
     opacity: 0.8;
-    text-decoration: none; 
+    text-decoration: none;
 }
 hr {
     height: 5px;
@@ -79,14 +79,33 @@ a.tag:hover {
         }
     }
     section {
+        p {
+            margin: 0;
+        }
+        h1,h2,h3 {
+            border-bottom: 1px solid #47a89c;
+            padding-bottom: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
         h1 {
             font-size: 1.5rem;
+        }
+        h1::before {
+            font-weight: bold;
+            content: "# ";
         }
         h2 {
             font-size: 1.2rem;
         }
+        h2::before {
+            content: "## ";
+        }
         h3 {
             font-size: 1.0rem;
+        }
+        h3::before {
+            content: "### ";
         }
     }
     pre {
