@@ -10480,6 +10480,14 @@ a.tag:hover {
   width: initial;
 }
 
+#SiteTitle {
+  font-weight: bold;
+}
+
+#FrontArticleDetail #contents header h2 {
+  font-size: 2.0rem;
+}
+
 #FrontArticleDetail section h1 {
   font-size: 1.5rem;
 }

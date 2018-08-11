@@ -3,7 +3,7 @@
     <div class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
         <!-- Articles Start -->
         <article id="contents" class="mb-md-4">
-            <header>
+            <header class="mb-md-4">
                 <h2>{{ article.title }}</h2>
                 <span class="publish-date float-right text-light-green">Published: {{ article.created_at | moment }}</span>
                 <div class="clearfix mb-md-2"></div>
