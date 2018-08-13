@@ -1,10 +1,14 @@
 <template>
-<div class="row">
+<div id="FrontHeader" class="row">
     <header class="col-12 col-sm-12 col-md-12 text-center mt-3">
         <h1 id="SiteTitle"><router-link :to="'/'">{{ title }}</router-link></h1>
         <p>{{ description }}</p>
+        <ul id="Menu">
+            <li class="menu-item"><router-link :to="'/'">Profile</router-link></li>
+            <li class="menu-item"><router-link :to="'/'">Contact</router-link></li>
+        </ul>
         <hr class="col-5 col-sm-5 col-md-2 text-center">
-        <div id="search" class="mb-4">
+        <div id="Search" class="mb-4">
             <div class="col-4 col-sm-4 col-md-4 mx-auto">
                 <input type="text" class="form-control text-center p-0" placeholder="しぼりこみけんさく" v-on:keyup.enter="pushFilteredIndex">
             </div>
