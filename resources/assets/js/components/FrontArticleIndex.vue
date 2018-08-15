@@ -1,5 +1,10 @@
 <template>
 <div id="FrontArticleIndex" class="container">
+    <div id="Search" class="mb-4">
+        <div class="col-4 col-sm-4 col-md-4 mx-auto">
+            <input type="text" class="form-control text-center p-0" placeholder="しぼりこみけんさく" v-on:keyup.enter="pushFilteredIndex">
+        </div>
+    </div>
     <div class="p-md-3 col-9 col-sm-9 col-md-9 mx-auto">
         <article class="mb-4" v-for="(article, key, index) in articles" :key="index">
             <header>
@@ -87,6 +92,14 @@ export default {
             })
             return filtered
         },
+        pushFilteredIndex(event) {
+            const keyword = encodeURIComponent(event.target.value)
+            if (keyword) {
+                this.$router.push({ path: '/?keyword=' + keyword })
+            } else {
+                this.$router.push({ path: '/' })
+            }
+        }
     }
 }
 </script>
