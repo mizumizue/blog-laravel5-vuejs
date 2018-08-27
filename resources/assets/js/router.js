@@ -27,6 +27,14 @@ const router = new VueRouter({
                     path: 'article/:code',
                     component: require('./components/FrontArticleDetail.vue'),
                 },
+                {
+                    path: 'profile',
+                    component: require('./components/FrontProfile.vue'),
+                },
+                {
+                    path: 'contact',
+                    component: require('./components/FrontContact.vue'),
+                },
             ]
         },
         {

@@ -1,9 +1,7 @@
 <template>
 <div class="Footer container">
     <div class="row">
-        <footer class="fixed-bottom bg-dark p-0 pt-1 pb-1 col-12 text-light text-center">
-            {{ footerDomain }}
-        </footer>
+        <footer class="fixed-bottom bg-dark p-0 pt-1 pb-1 col-12 text-light text-center">{{ footerDomain }}</footer>
     </div>
 </div>
 </template>
