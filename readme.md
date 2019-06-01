@@ -1,4 +1,4 @@
-# myblog
+# MyBlogWithLaravel5
 
 自作アプリの練習兼自分の技術ブログも欲しいという理由。
 Laravel - API
