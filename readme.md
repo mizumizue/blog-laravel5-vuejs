@@ -1,26 +1,45 @@
-# MyBlogWithLaravel5
+# blog-laravel5-vuejs
 
-自作アプリの練習兼自分の技術ブログも欲しいという理由。
-Laravel - API
-Vue.js - フロント
-のSPAで構築中。
+## Descritpion
 
-## 概要
+自作アプリの練習兼自分の技術ブログも欲しいという理由で制作。
+Laravel製のAPIをVue.ｊｓのフロントページから叩きにいくという構成。
+Blog管理画面についても同様。
 
-- ログイン機能(Vue.js側で実装)
-- API認証(ログイン時に取得したJWTトークンを使用した場合のみAPIを叩けるように実装)
-- Markdownを使用しての記事編集機能(EditorをSimpleMDE、パーサーをMarkedで実装)
-- SPA(APIをLaravel、Vue.jsでAPIを叩いて(Axios)データ取得、画面遷移はVue-Routerで制御、Component間のデータ受け渡しをVuexで実装)
+Laravel - Backend
+Vue.js - Frontend
 
-## 環境、言語、ライブラリ
+## Features
 
-- Vagrant
-- CentOS7.4
-- Apache2.4
-- MySQL5.6
+### Frontend
+
+- Blog記事一覧
+- Blog記事ページ
+- キーワード、タグによる記事検索
+
+### Backend
+
+- API(記事・タグ・管理情報)
+- API認証(JWT)
+
+### CMS
+
+- 記事編集（Markdown）
+- タグ追加、編集
+- サイト情報管理
+
+## Development environment
+
 - PHP7.2
-- Laravel5.6
 - Vue.js
+- MySQL5.6
+- Laravel5.6
+- Apache2.4
+- CentOS7.4
+- Vagrant
+
+## Libraries
+
 - Vue Router
 - Vuex
 - Axios
